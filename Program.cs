@@ -18,6 +18,7 @@
         switch(Tipovehi)
         {
             case 1:
+                Console.WriteLine("jdijeijedj");
 
                 break;
 
