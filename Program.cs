@@ -23,6 +23,7 @@
                 break;
 
             case 2:
+                Console.WriteLine("hola,como estas viejito");
                 break;
 
             case 3:
