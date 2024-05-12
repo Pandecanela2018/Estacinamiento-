@@ -44,15 +44,165 @@ class Estacionamiento
         switch (Tipovehi)
         {
             case 1:
-                Console.WriteLine("jdijeijedj");
+               Console.WriteLine("----------------------------------------------------");
+Console.WriteLine("Acontinuacion se le mostrara los espacios que hay en grupo de Vehiculos");
+Console.WriteLine("----------------------------------------------------");
+char[] espacios = new char[100];
 
+    InicializarEspacios(espacios); 
+
+    MostrarEstacionamiento(espacios); 
+
+    IngresarAuto(espacios); 
+
+    MostrarEstacionamiento(espacios); 
+
+    Console.ReadLine();
+
+    static void InicializarEspacios(char[] espacios)
+    {
+        for (int i = 0; i < espacios.Length; i++)
+        {
+            espacios[i] = '*'; 
+        }
+    }
+
+    static void MostrarEstacionamiento(char[] espacios)
+    {
+        Console.WriteLine("Estado del Estacionamiento:");
+        for (int i = 0; i < espacios.Length; i++)
+        {
+            if (espacios[i] == '*')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            Console.Write("* "); 
+        }
+        Console.WriteLine("\n");
+        Console.ResetColor();
+    }
+
+    static void IngresarAuto(char[] espacios)
+    {
+        Console.WriteLine("Ingrese la cantidad de autos que han ingresado:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            espacios[i] = 'X';
+        }
+    }
                 break;
-
             case 2:
-                Console.WriteLine("hola,como estas viejito");
-                break;
+ Console.WriteLine("----------------------------------------------------");
+Console.WriteLine("Acontinuacion se le mostrara los espacios que hay en el grupo de Motos");
+Console.WriteLine("----------------------------------------------------");
+char[] espacios2 = new char[50];
 
+    InicializarEspacios2(espacios2); 
+
+    MostrarEstacionamiento2(espacios2); 
+
+    IngresarPesado(espacios2); 
+
+    MostrarEstacionamiento2(espacios2); 
+
+    Console.ReadLine();
+
+    static void InicializarEspacios2(char[] espacios)
+    {
+        for (int i = 0; i < espacios.Length; i++)
+        {
+            espacios[i] = '*'; 
+        }
+    }
+
+    static void MostrarEstacionamiento2(char[] espacios)
+    {
+        Console.WriteLine("Estado del Estacionamiento:");
+        for (int i = 0; i < espacios.Length; i++)
+        {
+            if (espacios[i] == '*')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            Console.Write("* "); 
+        }
+        Console.WriteLine("\n");
+        Console.ResetColor();
+    }
+
+    static void IngresarPesado(char[] espacios)
+    {
+        Console.WriteLine("Ingrese la cantidad de Vehiculos pesados que se han ingresado:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            espacios[i] = 'X';
+        }
+    }
+                break;
             case 3:
+                 Console.WriteLine("----------------------------------------------------");
+ Console.WriteLine("Acontinuacion se le mostrara los espacios que hay en el grupo de Motos");
+ Console.WriteLine("----------------------------------------------------");
+ char[] espacios3 = new char[200];
+
+ InicializarEspacios3(espacios3); 
+
+ MostrarEstacionamiento3(espacios3); 
+
+ Ingresarmoto(espacios3);
+
+ MostrarEstacionamiento3(espacios3); 
+
+ Console.ReadLine();
+
+ static void InicializarEspacios3(char[] espacios)
+ {
+     for (int i = 0; i < espacios.Length; i++)
+     {
+         espacios[i] = '*'; 
+     }
+ }
+ static void MostrarEstacionamiento3(char[] espacios)
+ {
+     Console.WriteLine("Estado del Estacionamiento:");
+     for (int i = 0; i < espacios.Length; i++)
+     {
+         if (espacios[i] == '*')
+         {
+             Console.ForegroundColor = ConsoleColor.Green;
+         }
+         else
+         {
+             Console.ForegroundColor = ConsoleColor.Red;
+         }
+         Console.Write("* "); 
+     }
+     Console.WriteLine("\n");
+     Console.ResetColor();
+ }
+
+ static void Ingresarmoto(char[] espacios)
+ {
+     Console.WriteLine("Ingrese la cantidad de Motos que se han ingresado:");
+     int cantidad = Convert.ToInt32(Console.ReadLine());
+
+     for (int i = 0; i < cantidad; i++)
+     {
+         espacios[i] = 'X';
+     }
+ }
                 break;
             case 0:
                 break;
@@ -123,12 +273,5 @@ class Estacionamiento
         Console.WriteLine("------------------------ ");
         Console.WriteLine("****Salida de dinero****");
         Console.WriteLine("$ " + totalsalida);
-
-
-
-
-
-
-
     }
 }
