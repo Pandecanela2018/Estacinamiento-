@@ -209,7 +209,7 @@
 
 
                }
-           } while (Tipovehi < 0);
+        } while (Tipovehi < 0);
            Console.Clear();
 
            do
@@ -274,11 +274,11 @@
            Console.WriteLine("****Salida de dinero****");
            Console.WriteLine("$ " + totalsalida);
            Console.WriteLine("---------------------------------------------------- ");
-           Console.WriteLine("presione cualquier tecla para volver a las tarifas");
+           Console.WriteLine("presione cualquier tecla para finalizar              ");
            Console.WriteLine("---------------------------------------------------- ");
            Console.ReadKey();
            Console.Clear();
 
-       } while (Tipovehi != 0);
+      
     }
 }
