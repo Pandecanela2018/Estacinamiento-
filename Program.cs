@@ -1,9 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Channels;
-
-class Estacionamiento
+﻿class Estacionamiento
 {
     public static void Main(string[] args)
     {
@@ -30,7 +25,7 @@ class Estacionamiento
         Console.WriteLine(" ");
         Console.WriteLine("------------------------------------------------------------------------------ ");
         Console.WriteLine(" ");
-        Console.WriteLine("Presione cualquier tecla para continuar");
+        Console.WriteLine("Presione cualquier tecla para continuar"); 
         Console.ReadKey();
         Console.Clear();
         Console.WriteLine(" ");
