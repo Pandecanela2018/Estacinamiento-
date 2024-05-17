@@ -1,5 +1,5 @@
 
-class Estacionamiento
+class EstacionamientoProyecto
 {
     public static void Main(string[] args)
     {
