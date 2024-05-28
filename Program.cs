@@ -4,22 +4,21 @@ class Estacionamiento
     public static void Main(string[] args)
     {
 
-        int Tipovehi, horaentra = 0, horasalida = 0, minutoentra = 0, minutosalida = 0, pago;
-        double Minutosesta, totalapagar = 0, Extra, fración, totalsalida, ingresopago;
+        int Tipovehi;
 
-        horaentra = DateTime.Now.Hour;
-        minutoentra = DateTime.Now.Minute;
+        DateTime horaentrada = DateTime.Now;
+       
         Console.WriteLine("Bienvenidos al estacionamiento");
         Console.WriteLine("  ");
         Console.WriteLine("Tome su ticket");
         Console.WriteLine(" ");
         Console.WriteLine(" ");
         Console.WriteLine("------------------------------------------------------------------------------ ");
-        Console.WriteLine("Hora de entrada al estacionamiento es  " + horaentra + ":" + minutoentra + " ");
+        Console.WriteLine("Hora de entrada al estacionamiento es : {0} ", horaentrada.ToString("hh:mm"));
         Console.WriteLine("------------------------------------------------------------------------------ ");
-        Console.WriteLine(" ");
+        Console.WriteLine("                                                                               ");
         Console.WriteLine("                                   Tarifas                                     ");
-        Console.WriteLine("                                1 hora = $ 1.50                                  ");
+        Console.WriteLine("                                1 hora = $ 1.50                                ");
         Console.WriteLine("                           Fracción de hora = ¢ 0.50                           ");
         Console.WriteLine("   No nos hacemos responsables de cualquier robo o daño que se haga al vehiculo");
         Console.WriteLine("                            ****Muchas Gracias****                             ");
@@ -183,75 +182,60 @@ class Estacionamiento
                 break;
 
         }
-
         Console.Clear();
 
-        do
+        DateTime horaSalida = DateTime.Now;
+        TimeSpan finalizado = horaSalida - horaentrada;
+        Console.WriteLine("Salida del parqueo");
+        Console.ReadKey();
+        Console.WriteLine(" ");
+        Console.WriteLine("---------------------------------------------------------------------------------------------------------");
+        Console.WriteLine("                                           Ticket                      ");
+        Console.WriteLine("                     Su hora de ingreso fue: {0}",horaentrada.ToString("hh:mm"));
+        Console.WriteLine("                      Su hora de salida es: {0}", horaSalida.ToString("hh:mm"));
+        Console.WriteLine("                  Su estadía en el parqueo fue de  {0} minutos  con  {1} segundos ", finalizado.Minutes, finalizado.Seconds);
+        Console.WriteLine("                          Gracias por utilizar nuestras instalaciones    ");
+        Console.WriteLine("---------------------------------------------------------------------------------------------------------");
+        Console.WriteLine("");
+
+        Console.WriteLine("Ticket de pago");
+
+
+        if (finalizado.TotalSeconds > 60)
         {
-            Console.WriteLine("Ingrese la hora de salida (horario 24 Horas) : ");
-            horasalida = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ingrese los minutos (60 minutos): ");
-            minutosalida = Convert.ToInt32(Console.ReadLine());
-
-            if (horasalida > 24 && minutosalida > 60 || horasalida <= 24 && minutosalida > 60 || horasalida > 24 && minutosalida <= 60)
-            {
-                Console.WriteLine("Ingrese correctamente la hora y minuto de salida");
-                Console.ReadKey();
-                Console.Clear();
-            }
-
-
-        } while (horasalida > 24 && minutosalida > 60 || horasalida <= 24 && minutosalida > 60 || horasalida > 24 && minutosalida <= 60);
-
-        Minutosesta = ((horasalida * 60) + minutosalida) - ((horaentra * 60) + minutoentra);
-
-        if (Minutosesta <= 60)
-        {
-            totalapagar = 1.50;
+            Console.WriteLine("Ha excedido una hora de estadía. Debe pagar la tarifa completa.");
 
         }
         else
         {
-            totalapagar = 1.50;
-            Extra = Minutosesta - 60;
-            fración = Math.Ceiling(Extra / 15);
-            totalapagar += (fración * 0.50);
+            double tarifaFraccion = 0.50;
+            double tarifaTotal = (finalizado.TotalSeconds / 60) * 1.50;
+
+            Console.WriteLine("La tarifa total es: $" + ((short)tarifaTotal));
         }
 
-        Console.WriteLine("Su hora de salida es " + horasalida + ":" + minutosalida);
-        do
-        {
+        //if (finalizado.TotalSeconds > 60)
+        //{
+        //    Console.WriteLine("Ha excedido una hora de estadía. Debe pagar la tarifa completa.");
+        //    Console.WriteLine("Su saldo es");
+        //    Console.WriteLine(" ");
+        //    double tarifaFraccion = 0.50;
+        //    double Pago = finalizado.TotalSeconds/ 
+        //    Console.ReadKey();
 
-            Console.WriteLine(" ");
-            Console.WriteLine("El saldo a pagar de los clientes es de: $ {0} ", totalapagar);
-            Console.WriteLine(" ");
-            Console.WriteLine("Inidique la cantidad adecuada $1, $5, $10 y $20");
-            ingresopago = Convert.ToDouble(Console.ReadLine());
-            Console.Clear();
-            if (ingresopago < totalapagar)
-            {
-                Console.WriteLine("Saldo insuficiente");
-                Console.WriteLine("Ingrese correctamente el dinero");
-                Console.ReadKey();
-                Console.Clear();
-            }
-        } while (ingresopago < totalapagar);
+        //}
+        //else
+        //{
 
-        Console.WriteLine("------------------------ ");
-        Console.WriteLine("****Procesando****");
-        Console.WriteLine("------------------------ ");
-        Console.ReadKey();
-        totalsalida = ingresopago - totalapagar;
-        Console.WriteLine("El cambio es de: ${0}", totalsalida);
-        Console.WriteLine(" ");
-        Console.WriteLine("---------------------------------------------------- ");
-        Console.WriteLine("****Salida de dinero****");
-        Console.WriteLine("$ " + totalsalida);
-        Console.WriteLine("---------------------------------------------------- ");
-        Console.WriteLine("presione cualquier tecla para finalizar              ");
-        Console.WriteLine("---------------------------------------------------- ");
-        Console.ReadKey();
-        Console.Clear();
+        //    double tarifaTotal = (finalizado.TotalSeconds / 60) * 1.50;
 
+        //    Console.WriteLine("La tarifa total es: $" + tarifaTotal);
     }
+
+       
+
+
+
+
 }
+
