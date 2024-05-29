@@ -4,7 +4,210 @@ class Estacionamiento
     {
 
         int Tipovehi;
+        double Tcompleta = 0; 
 
+        static void LugarCH()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 3;
+            int anchuraRectangulo = 2;
+
+
+            Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+            int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+            if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+            {
+                Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+                return;
+            }
+
+
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+
+                    if (j + 1 == rectanguloRojo)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+
+
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+
+
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+            }
+            Console.ResetColor();
+        }
+        static void LugarGR()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 3;
+            int anchuraRectangulo = 2;
+
+
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+
+            }
+            Console.ResetColor();
+        }
+
+        static void lugarCH2()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 3;
+            int anchuraRectangulo = 1;
+
+
+            Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+            int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+            if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+            {
+                Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+                return;
+            }
+
+
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+
+                    if (j + 1 == rectanguloRojo)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+
+
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+
+
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+            }
+            Console.ResetColor();
+        }
+        static void lugarGR2()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 3;
+            int anchuraRectangulo = 1;
+
+
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+
+            }
+            Console.ResetColor();
+        }
+        static void lugarCH3()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 4;
+            int anchuraRectangulo = 2;
+
+
+            Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+            int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+            if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+            {
+                Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+                return;
+            }
+
+
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+
+                    if (j + 1 == rectanguloRojo)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+            }
+            Console.ResetColor();
+        }
+        static void lugarGR3()
+        {
+            int cantidadRectangulos = 5;
+            int alturaRectangulo = 4;
+            int anchuraRectangulo = 2;
+            for (int i = 0; i < alturaRectangulo; i++)
+            {
+                for (int j = 0; j < cantidadRectangulos; j++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    for (int k = 0; k < anchuraRectangulo; k++)
+                    {
+                        Console.Write("* ");
+                    }
+
+                    Console.Write("   ");
+                }
+                Console.WriteLine();
+
+            }
+            Console.ResetColor();
+        }
         DateTime horaentrada = DateTime.Now;
 
         Console.WriteLine("Bienvenidos al estacionamiento");
@@ -53,7 +256,7 @@ class Estacionamiento
         Console.Clear();
         Console.WriteLine("Estado del estacionamiento:");
         Console.WriteLine("------------------------------------------------------------------------------------------");
-        switch (opci)
+        switch (opci.ToUpper())
         {
             case "A":
                 Console.WriteLine("---------------------------------------------------------------------------------------------");
@@ -151,214 +354,8 @@ class Estacionamiento
                 Console.WriteLine("------------------------------------------------------------------------------------------");
                 break;
         }
-    }
-
-    static void LugarCH()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 3;
-        int anchuraRectangulo = 2;
-
-
-        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
-        int rectanguloRojo = int.Parse(Console.ReadLine());
-
-
-        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
-        {
-            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
-            return;
-        }
-
-
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-
-                if (j + 1 == rectanguloRojo)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-
-
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-
-
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-        }
-        Console.ResetColor();
-    }
-    static void LugarGR()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 3;
-        int anchuraRectangulo = 2;
-
-
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-
-        }
-        Console.ResetColor();
-    }
-
-    static void lugarCH2()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 3;
-        int anchuraRectangulo = 1;
-
-
-        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
-        int rectanguloRojo = int.Parse(Console.ReadLine());
-
-
-        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
-        {
-            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
-            return;
-        }
-
-
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-
-                if (j + 1 == rectanguloRojo)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-
-
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-
-
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-        }
-        Console.ResetColor();
-    }
-    static void lugarGR2()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 3;
-        int anchuraRectangulo = 1;
-
-
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-
-        }
-        Console.ResetColor();
-    }
-    static void lugarCH3()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 4;
-        int anchuraRectangulo = 2;
-
-
-        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
-        int rectanguloRojo = int.Parse(Console.ReadLine());
-
-
-        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
-        {
-            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
-            return;
-        }
-
-
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-
-                if (j + 1 == rectanguloRojo)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-        }
-        Console.ResetColor();
-    }
-    static void lugarGR3()
-    {
-        int cantidadRectangulos = 5;
-        int alturaRectangulo = 4;
-        int anchuraRectangulo = 2;
-        for (int i = 0; i < alturaRectangulo; i++)
-        {
-            for (int j = 0; j < cantidadRectangulos; j++)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                for (int k = 0; k < anchuraRectangulo; k++)
-                {
-                    Console.Write("* ");
-                }
-
-                Console.Write("   ");
-            }
-            Console.WriteLine();
-
-        }
-        Console.ResetColor();
-    }
-
-}
-
-Console.Clear();
+        Console.ReadKey();
+        Console.Clear();
 
         DateTime horaSalida = DateTime.Now;
         TimeSpan finalizado = horaSalida - horaentrada;
@@ -366,43 +363,54 @@ Console.Clear();
         Console.ReadKey();
         Console.WriteLine(" ");
         Console.WriteLine("---------------------------------------------------------------------------------------------------------");
-        Console.WriteLine("                                           Ticket                      ");
-        Console.WriteLine("                     Su hora de ingreso fue: {0}", horaentrada.ToString("hh:mm"));
-        Console.WriteLine("                      Su hora de salida es: {0}", horaSalida.ToString("hh:mm"));
+        Console.WriteLine("                                                 Ticket                      ");
+        Console.WriteLine("                                     Su hora de ingreso fue: {0}", horaentrada.ToString("hh:mm"));
+        Console.WriteLine("                                     Su hora de salida es: {0}", horaSalida.ToString("hh:mm"));
         Console.WriteLine("                  Su estadía en el parqueo fue de  {0} minutos  con  {1} segundos ", finalizado.Minutes, finalizado.Seconds);
         Console.WriteLine("                          Gracias por utilizar nuestras instalaciones    ");
         Console.WriteLine("---------------------------------------------------------------------------------------------------------");
-        Console.WriteLine("");
-
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
         Console.WriteLine("Ticket de pago");
 
-
-        if (finalizado.TotalSeconds > 60)
+         
+        if (finalizado.TotalSeconds <= 60)
         {
             Console.WriteLine("Ha excedido una hora de estadía. Debe pagar la tarifa completa.");
+            Tcompleta = 1.50;
+            Console.WriteLine("Su monto pagar es : ${0}", Tcompleta);
+            Console.WriteLine("Presione cualquier tecla para pagar");
+            Console.ReadKey();
+
 
         }
-        else
+        else if (finalizado.TotalSeconds>60)
         {
-            double tarifaFraccion = 0.50;
-            double tarifaTotal = (finalizado.TotalSeconds / 60) * 1.50;
+            Tcompleta = 1.50;
+            double Extra = finalizado.TotalSeconds  - 60;
+            double fración = Math.Ceiling(Extra / 15);
+            Tcompleta += fración * 0.50;
 
-            Console.WriteLine("La tarifa total es: $" + ((short)tarifaTotal));
+
+
+            Console.WriteLine("La tarifa total es: $" + ((short)Tcompleta));
         }
 
-        //if (finalizado.TotalSeconds > 60)
-        //{
-        //    Console.WriteLine("Ha excedido una hora de estadía. Debe pagar la tarifa completa.");
-        //    Console.WriteLine("Su saldo es");
-        //    Console.WriteLine(" ");
-        //    double tarifaFraccion = 0.50;
-        //    double Pago = finalizado.TotalSeconds/ 
-        //    Console.ReadKey();
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine("Ingrese billetes de $1, $5, $10, $20, $50, $100");
+        double dinero = Convert.ToDouble(Console.ReadLine());
 
-        //}
-        //else
-        //{
+        double pago = Tcompleta - dinero;
 
-        //    double tarifaTotal = (finalizado.TotalSeconds / 60) * 1.50;
+        Console.WriteLine(pago);
 
-        //    Console.WriteLine("La tarifa total es: $" + tarifaTotal);
+
+    }
+
+
+}
+
+
+
+
