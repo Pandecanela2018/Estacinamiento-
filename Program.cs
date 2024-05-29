@@ -1,4 +1,3 @@
-
 class Estacionamiento
 {
     public static void Main(string[] args)
@@ -7,7 +6,7 @@ class Estacionamiento
         int Tipovehi;
 
         DateTime horaentrada = DateTime.Now;
-       
+
         Console.WriteLine("Bienvenidos al estacionamiento");
         Console.WriteLine("  ");
         Console.WriteLine("Tome su ticket");
@@ -29,160 +28,337 @@ class Estacionamiento
         Console.ReadKey();
         Console.Clear();
         Console.WriteLine(" ");
+        string opci;
+        Console.WriteLine("-------------------------------------------------------------------------------- ");
+        Console.WriteLine("Saludos, decida en que lugar desea ingresar su auto, basado en la lista presente");
+        Console.WriteLine("-------------------------------------------------------------------------------- ");
+        Console.WriteLine("para selecionar uno de los espacios visibibles, coloque La Lectra del lugar");
+        Console.WriteLine("(A)");
+        LugarGR();
+        Console.WriteLine("(B)");
+        LugarGR();
+        Console.WriteLine("---------------------------------------------------------------------------------------------");
+        Console.WriteLine("grupo de motos");
+        Console.WriteLine("(C)");
+        lugarGR2();
+        Console.WriteLine("(D)");
+        lugarGR2();
+        Console.WriteLine("-------------------------------------------------------------------------------------------");
+        Console.WriteLine("grupo de Vehiculos pesados");
+        Console.WriteLine("(E)");
+        lugarGR3();
+        Console.WriteLine("------------------------------------------------------------------------------------------");
 
-        char[] espaciosSedan = new char[50];
-        static void InicializarEspacios(char[] espaciosSedan)
-        {
-            for (int sedan = 0; sedan < espaciosSedan.Length; sedan++)
-            {
-                espaciosSedan[sedan] = '*';
-            }
-        }
-        static void MostrarEstacionamiento(char[] espaciosSedan)
-        {
-            Console.WriteLine("Estado del Estacionamiento:");
-            Console.ReadKey();
-            for (int sedan = 0; sedan < espaciosSedan.Length; sedan++)
-            {
-                if (espaciosSedan[sedan] == '*')
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.WriteLine("Ingreso de vehiculo sedan");
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                Console.Write("* ");
-            }
-            Console.WriteLine("\n");
-            Console.ResetColor();
-
-            int cantidad = 1;
-
-            for (int sedan = 0; sedan < cantidad; sedan++)
-            {
-                espaciosSedan[sedan] = 'X';
-            }
-        }
-
-
-        char[] espaciosMoto = new char[30];
-
-        static void InicializarEspaciosMotos(char[] espaciosMoto)
-        {
-            for (int Moto = 0; Moto < espaciosMoto.Length; Moto++)
-            {
-                espaciosMoto[Moto] = '*';
-            }
-        }
-        static void MostrarEstacionamientoMotos(char[] espaciosMoto)
-        {
-            Console.WriteLine("Estado del Estacionamiento:");
-            Console.ReadKey();
-            for (int Moto = 0; Moto < espaciosMoto.Length; Moto++)
-            {
-                if (espaciosMoto[Moto] == '*')
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.WriteLine("Ingreso de Moto");
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                Console.Write("* ");
-            }
-            Console.WriteLine("\n");
-            Console.ResetColor();
-
-            int cantidad = 1;
-
-            for (int Moto = 0; Moto < cantidad; Moto++)
-            {
-                espaciosMoto[Moto] = 'X';
-            }
-        }
-
-
-        char[] espaciosVehiculosPesado = new char[25];
-        static void InicializarEspaciosPesado(char[] espaciosVehiculosPesado)
-        {
-            for (int Pesado = 0; Pesado < espaciosVehiculosPesado.Length; Pesado++)
-            {
-                espaciosVehiculosPesado[Pesado] = '*';
-            }
-        }
-        static void MostrarEstacionamientoPesado(char[] espaciosVehiculosPesado)
-        {
-            Console.WriteLine("Estado del Estacionamiento:");
-            Console.ReadKey();
-            for (int Pesado = 0; Pesado < espaciosVehiculosPesado.Length; Pesado++)
-            {
-                if (espaciosVehiculosPesado[Pesado] == '*')
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.WriteLine("Ingreso de vehiculo sedan");
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                Console.Write("* ");
-            }
-            Console.WriteLine("\n");
-            Console.ResetColor();
-
-            int cantidad = 1;
-
-            for (int Pesado = 0; Pesado < cantidad; Pesado++)
-            {
-                espaciosVehiculosPesado[Pesado] = 'X';
-            }
-        }
-        Console.WriteLine("Ingrese que tipo de vehiculo cuenta");
-        Console.WriteLine(" ");
-        Console.WriteLine("1.Vehiculos sedan \r\n 2.Moto \r\n 3.Vehiculos Pesado");
-        Tipovehi = Convert.ToInt32(Console.ReadLine());
-
-        switch (Tipovehi)
-        {
-            case 1:
-                Console.WriteLine("----------------------------------------------------------------------------");
-                Console.WriteLine(" Acontinuacion se le mostrara los espacios que hay en el grupo de Vehiculos");
-                Console.WriteLine("----------------------------------------------------------------------------");
-                Console.WriteLine(" ");
-                Console.WriteLine(" Nivel 1 ");
-                InicializarEspacios(espaciosSedan);
-                MostrarEstacionamiento(espaciosSedan);
-                MostrarEstacionamiento(espaciosSedan);
-                Console.ReadKey();
-                break;
-            case 2:
-                Console.WriteLine("------------------------------------------------------------------------");
-                Console.WriteLine(" Acontinuacion se le mostrara los espacios que hay en el grupo de Motos ");
-                Console.WriteLine("------------------------------------------------------------------------");
-                Console.WriteLine(" ");
-                Console.WriteLine(" Nivel 2 ");
-                InicializarEspaciosMotos(espaciosMoto);
-                MostrarEstacionamientoMotos(espaciosMoto);
-                MostrarEstacionamientoMotos(espaciosMoto);
-                Console.ReadKey();
-                break;
-            case 3:
-                Console.WriteLine("-----------------------------------------------------------------------------------");
-                Console.WriteLine(" Acontinuacion se le mostrara los espacios que hay en el grupo de Vehiculos Pesado");
-                Console.WriteLine("-----------------------------------------------------------------------------------");
-                Console.WriteLine(" ");
-                Console.WriteLine(" Nivel 3 ");
-                InicializarEspacios(espaciosVehiculosPesado);
-                MostrarEstacionamientoPesado(espaciosVehiculosPesado);
-                MostrarEstacionamientoPesado(espaciosVehiculosPesado);
-                Console.ReadKey();
-                break;
-
-        }
+        opci = Convert.ToString(Console.ReadLine());
         Console.Clear();
+        Console.WriteLine("Estado del estacionamiento:");
+        Console.WriteLine("------------------------------------------------------------------------------------------");
+        switch (opci)
+        {
+            case "A":
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de autos");
+                Console.WriteLine("(A)");
+                LugarCH();
+                Console.WriteLine("(B)");
+                LugarGR();
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de motos");
+                Console.WriteLine("(C)");
+                lugarGR2();
+                Console.WriteLine("(D)");
+                lugarGR2();
+                Console.WriteLine("-------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de Vehiculos pesados");
+                Console.WriteLine("(E)");
+                lugarGR3();
+                Console.WriteLine("------------------------------------------------------------------------------------------");
+                break;
+            case "B":
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de autos");
+                Console.WriteLine("(A)");
+                LugarGR();
+                Console.WriteLine("(B)");
+                LugarCH();
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de motos");
+                Console.WriteLine("(C)");
+                lugarGR2();
+                Console.WriteLine("(D)");
+                lugarGR2();
+                Console.WriteLine("-------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de Vehiculos pesados");
+                Console.WriteLine("(E)");
+                lugarGR3();
+                Console.WriteLine("------------------------------------------------------------------------------------------");
+                break;
+            case "C":
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de autos");
+                Console.WriteLine("(A)");
+                LugarGR();
+                Console.WriteLine("(B)");
+                LugarGR();
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de motos");
+                Console.WriteLine("(C)");
+                lugarCH2();
+                Console.WriteLine("(D)");
+                lugarGR2();
+                Console.WriteLine("-------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de Vehiculos pesados");
+                Console.WriteLine("(E)");
+                lugarGR3();
+                Console.WriteLine("------------------------------------------------------------------------------------------");
+                break;
+            case "D":
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de autos");
+                Console.WriteLine("(A)");
+                LugarGR();
+                Console.WriteLine("(B)");
+                LugarGR();
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de motos");
+                Console.WriteLine("(C)");
+                lugarGR2();
+                Console.WriteLine("(D)");
+                lugarCH2();
+                Console.WriteLine("-------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de Vehiculos pesados");
+                Console.WriteLine("(E)");
+                lugarGR3();
+                Console.WriteLine("------------------------------------------------------------------------------------------");
+                break;
+            case "E":
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de autos");
+                Console.WriteLine("(A)");
+                LugarGR();
+                Console.WriteLine("(B)");
+                LugarGR();
+                Console.WriteLine("---------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de motos");
+                Console.WriteLine("(C)");
+                lugarGR2();
+                Console.WriteLine("(D)");
+                lugarGR2();
+                Console.WriteLine("-------------------------------------------------------------------------------------------");
+                Console.WriteLine("grupo de Vehiculos pesados");
+                Console.WriteLine("(E)");
+                lugarCH3();
+                Console.WriteLine("------------------------------------------------------------------------------------------");
+                break;
+        }
+    }
+
+    static void LugarCH()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 3;
+        int anchuraRectangulo = 2;
+
+
+        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+        int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+        {
+            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+            return;
+        }
+
+
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+
+                if (j + 1 == rectanguloRojo)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+
+
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+
+
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+        }
+        Console.ResetColor();
+    }
+    static void LugarGR()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 3;
+        int anchuraRectangulo = 2;
+
+
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+
+        }
+        Console.ResetColor();
+    }
+
+    static void lugarCH2()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 3;
+        int anchuraRectangulo = 1;
+
+
+        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+        int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+        {
+            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+            return;
+        }
+
+
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+
+                if (j + 1 == rectanguloRojo)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+
+
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+
+
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+        }
+        Console.ResetColor();
+    }
+    static void lugarGR2()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 3;
+        int anchuraRectangulo = 1;
+
+
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+
+        }
+        Console.ResetColor();
+    }
+    static void lugarCH3()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 4;
+        int anchuraRectangulo = 2;
+
+
+        Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
+        int rectanguloRojo = int.Parse(Console.ReadLine());
+
+
+        if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
+        {
+            Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+            return;
+        }
+
+
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+
+                if (j + 1 == rectanguloRojo)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+        }
+        Console.ResetColor();
+    }
+    static void lugarGR3()
+    {
+        int cantidadRectangulos = 5;
+        int alturaRectangulo = 4;
+        int anchuraRectangulo = 2;
+        for (int i = 0; i < alturaRectangulo; i++)
+        {
+            for (int j = 0; j < cantidadRectangulos; j++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                for (int k = 0; k < anchuraRectangulo; k++)
+                {
+                    Console.Write("* ");
+                }
+
+                Console.Write("   ");
+            }
+            Console.WriteLine();
+
+        }
+        Console.ResetColor();
+    }
+
+}
+
+Console.Clear();
 
         DateTime horaSalida = DateTime.Now;
         TimeSpan finalizado = horaSalida - horaentrada;
@@ -191,7 +367,7 @@ class Estacionamiento
         Console.WriteLine(" ");
         Console.WriteLine("---------------------------------------------------------------------------------------------------------");
         Console.WriteLine("                                           Ticket                      ");
-        Console.WriteLine("                     Su hora de ingreso fue: {0}",horaentrada.ToString("hh:mm"));
+        Console.WriteLine("                     Su hora de ingreso fue: {0}", horaentrada.ToString("hh:mm"));
         Console.WriteLine("                      Su hora de salida es: {0}", horaSalida.ToString("hh:mm"));
         Console.WriteLine("                  Su estadía en el parqueo fue de  {0} minutos  con  {1} segundos ", finalizado.Minutes, finalizado.Seconds);
         Console.WriteLine("                          Gracias por utilizar nuestras instalaciones    ");
@@ -230,12 +406,3 @@ class Estacionamiento
         //    double tarifaTotal = (finalizado.TotalSeconds / 60) * 1.50;
 
         //    Console.WriteLine("La tarifa total es: $" + tarifaTotal);
-    }
-
-       
-
-
-
-
-}
-
