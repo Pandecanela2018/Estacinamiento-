@@ -4,14 +4,14 @@ class Estacionamiento
     {
 
         int Tipovehi;
-        double Tcompleta = 0; 
+        double Tcompleta = 0, Dinero=0; 
 
         static void LugarCH()
         {
             int cantidadRectangulos = 5;
             int alturaRectangulo = 3;
             int anchuraRectangulo = 2;
-
+            
 
             Console.WriteLine("Selecciona uno de los espacios (1 - 5) para elegir su lugar:");
             int rectanguloRojo = int.Parse(Console.ReadLine());
@@ -253,9 +253,9 @@ class Estacionamiento
         Console.WriteLine("------------------------------------------------------------------------------------------");
 
         opci = Convert.ToString(Console.ReadLine());
-        Console.Clear();
-        Console.WriteLine("Estado del estacionamiento:");
-        Console.WriteLine("------------------------------------------------------------------------------------------");
+        //Console.Clear();
+        //Console.WriteLine("Estado del estacionamiento:");
+        //Console.WriteLine("------------------------------------------------------------------------------------------");
         switch (opci.ToUpper())
         {
             case "A":
@@ -376,8 +376,6 @@ class Estacionamiento
          
         if (finalizado.TotalSeconds <= 60)
         {
-            Console.WriteLine("Ha excedido una hora de estadía. Debe pagar la tarifa completa.");
-            Tcompleta = 1.50;
             Console.WriteLine("Su monto pagar es : ${0}", Tcompleta);
             Console.WriteLine("Presione cualquier tecla para pagar");
             Console.ReadKey();
@@ -392,18 +390,33 @@ class Estacionamiento
             Tcompleta += fración * 0.50;
 
 
-
-            Console.WriteLine("La tarifa total es: $" + ((short)Tcompleta));
         }
+        do
+        {
+            Console.WriteLine("La tarifa total es: $" + ((short)Tcompleta));
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("Indique la cantidad adecuada $1, $5, $10 y $20");
+            Dinero= Convert.ToDouble(Console.ReadLine());
 
+            if (Dinero < Tcompleta )
+            {
+                Console.WriteLine("Saldo insuficiente");
+                Console.WriteLine("Ingrese correctamente el dinero");
+                Console.WriteLine("Presione cualquier tecla para pagar");
+                Console.ReadKey();
+                Console.Clear();
+            }
+
+        } while (Dinero<Tcompleta || Dinero<=Tcompleta);
+
+        double pago = Dinero-Tcompleta;
+
+        Console.Clear();
         Console.WriteLine(" ");
-        Console.WriteLine(" ");
-        Console.WriteLine("Ingrese billetes de $1, $5, $10, $20, $50, $100");
-        double dinero = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine(" $"+pago);
+        Console.WriteLine("*Gracias por utilizar nuestras instalaciones.*");
 
-        double pago = Tcompleta - dinero;
-
-        Console.WriteLine(pago);
 
 
     }
