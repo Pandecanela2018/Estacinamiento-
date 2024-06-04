@@ -208,6 +208,7 @@ class Estacionamiento
             }
             Console.ResetColor();
         }
+
         DateTime horaentrada = DateTime.Now;
 
         Console.WriteLine("Bienvenidos al estacionamiento");
@@ -253,12 +254,11 @@ class Estacionamiento
         Console.WriteLine("------------------------------------------------------------------------------------------");
 
         opci = Convert.ToString(Console.ReadLine());
-        //Console.Clear();
-        //Console.WriteLine("Estado del estacionamiento:");
-        //Console.WriteLine("------------------------------------------------------------------------------------------");
+        
         switch (opci.ToUpper())
         {
             case "A":
+
                 Console.WriteLine("---------------------------------------------------------------------------------------------");
                 Console.WriteLine("grupo de autos");
                 Console.WriteLine("(A)");
@@ -359,8 +359,11 @@ class Estacionamiento
 
         DateTime horaSalida = DateTime.Now;
         TimeSpan finalizado = horaSalida - horaentrada;
-        Console.WriteLine("Salida del parqueo");
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine("        Saliendo del parqueo         ");
+        Console.WriteLine("------------------------------------"); 
         Console.ReadKey();
+        Console.Clear();
         Console.WriteLine(" ");
         Console.WriteLine("---------------------------------------------------------------------------------------------------------");
         Console.WriteLine("                                                 Ticket                      ");
@@ -374,18 +377,22 @@ class Estacionamiento
         Console.WriteLine("Ticket de pago");
 
          
-        if (finalizado.TotalSeconds <= 60)
+        if (finalizado.TotalSeconds <= 60)  //1 = 60s
         {
+            Tcompleta = 1.50;
+            Console.WriteLine("------------------------------------");
             Console.WriteLine("Su monto pagar es : ${0}", Tcompleta);
+            Console.WriteLine("------------------------------------");
             Console.WriteLine("Presione cualquier tecla para pagar");
+            Console.WriteLine("------------------------------------");
             Console.ReadKey();
 
 
         }
         else if (finalizado.TotalSeconds>60)
-        {
+        {                                                                                              
             Tcompleta = 1.50;
-            double Extra = finalizado.TotalSeconds  - 60;
+            double Extra = finalizado.TotalSeconds  - 60;  
             double fración = Math.Ceiling(Extra / 15);
             Tcompleta += fración * 0.50;
 
@@ -393,17 +400,24 @@ class Estacionamiento
         }
         do
         {
-            Console.WriteLine("La tarifa total es: $" + ((short)Tcompleta));
+            Console.WriteLine("------------------------------------------------------------");
+            
             Console.WriteLine(" ");
-            Console.WriteLine(" ");
-            Console.WriteLine("Indique la cantidad adecuada $1, $5, $10 y $20");
+            Console.WriteLine             ("La tarifa total es: $" + Tcompleta);
+            Console.WriteLine("                                              ");
+            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("Indique la cantidad adecuada $1, $5, $10, $20 , $50 y $100");
             Dinero= Convert.ToDouble(Console.ReadLine());
 
             if (Dinero < Tcompleta )
             {
-                Console.WriteLine("Saldo insuficiente");
-                Console.WriteLine("Ingrese correctamente el dinero");
-                Console.WriteLine("Presione cualquier tecla para pagar");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine               ("Saldo insuficiente");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine        ("Ingrese correctamente el dinero");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine      ("Presione cualquier tecla para pagar");
+                Console.WriteLine("-----------------------------------------------");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -414,7 +428,11 @@ class Estacionamiento
 
         Console.Clear();
         Console.WriteLine(" ");
+        Console.WriteLine("-----------------------------------------------");
+        Console.WriteLine("Su cambio es: ");
+        Console.WriteLine("-----------------------------------------------");
         Console.WriteLine(" $"+pago);
+        Console.WriteLine("-----------------------------------------------");
         Console.WriteLine("*Gracias por utilizar nuestras instalaciones.*");
 
 
