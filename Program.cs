@@ -257,102 +257,44 @@ class Estacionamiento
         
         switch (opci.ToUpper())
         {
-            case "A":
+             case "A":
+      Console.WriteLine("---------------------------------------------------------------------------------------------");
+      Console.WriteLine("grupo de autos");
+      Console.WriteLine("(A)");
+      LugarCH();
+    
+      break;
+  case "B":
+       Console.WriteLine("---------------------------------------------------------------------------------------------");
+      Console.WriteLine("grupo de autos");
+      Console.WriteLine("(B)");
+      LugarCH();
+    
+   
+      break;
+  case "C":
+    
+      Console.WriteLine("---------------------------------------------------------------------------------------------");
+      Console.WriteLine("grupo de motos");
+      Console.WriteLine("(C)");
+      lugarCH2();
+   
+      break;
+  case "D":
+      Console.WriteLine("-------------------------------------------------------------------------------------------");
+      Console.WriteLine("grupo de motos");
+      Console.WriteLine("(D)");
+      lugarCH2();
+ 
+    
+      break;
+  case "E":
+      Console.WriteLine("-------------------------------------------------------------------------------------------");
+      Console.WriteLine("grupo de Vehiculos pesados");
+      Console.WriteLine("(E)");
+      lugarCH3();
 
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de autos");
-                Console.WriteLine("(A)");
-                LugarCH();
-                Console.WriteLine("(B)");
-                LugarGR();
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de motos");
-                Console.WriteLine("(C)");
-                lugarGR2();
-                Console.WriteLine("(D)");
-                lugarGR2();
-                Console.WriteLine("-------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de Vehiculos pesados");
-                Console.WriteLine("(E)");
-                lugarGR3();
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                break;
-            case "B":
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de autos");
-                Console.WriteLine("(A)");
-                LugarGR();
-                Console.WriteLine("(B)");
-                LugarCH();
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de motos");
-                Console.WriteLine("(C)");
-                lugarGR2();
-                Console.WriteLine("(D)");
-                lugarGR2();
-                Console.WriteLine("-------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de Vehiculos pesados");
-                Console.WriteLine("(E)");
-                lugarGR3();
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                break;
-            case "C":
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de autos");
-                Console.WriteLine("(A)");
-                LugarGR();
-                Console.WriteLine("(B)");
-                LugarGR();
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de motos");
-                Console.WriteLine("(C)");
-                lugarCH2();
-                Console.WriteLine("(D)");
-                lugarGR2();
-                Console.WriteLine("-------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de Vehiculos pesados");
-                Console.WriteLine("(E)");
-                lugarGR3();
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                break;
-            case "D":
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de autos");
-                Console.WriteLine("(A)");
-                LugarGR();
-                Console.WriteLine("(B)");
-                LugarGR();
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de motos");
-                Console.WriteLine("(C)");
-                lugarGR2();
-                Console.WriteLine("(D)");
-                lugarCH2();
-                Console.WriteLine("-------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de Vehiculos pesados");
-                Console.WriteLine("(E)");
-                lugarGR3();
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                break;
-            case "E":
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de autos");
-                Console.WriteLine("(A)");
-                LugarGR();
-                Console.WriteLine("(B)");
-                LugarGR();
-                Console.WriteLine("---------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de motos");
-                Console.WriteLine("(C)");
-                lugarGR2();
-                Console.WriteLine("(D)");
-                lugarGR2();
-                Console.WriteLine("-------------------------------------------------------------------------------------------");
-                Console.WriteLine("grupo de Vehiculos pesados");
-                Console.WriteLine("(E)");
-                lugarCH3();
-                Console.WriteLine("------------------------------------------------------------------------------------------");
-                break;
+      break;
         }
         Console.ReadKey();
         Console.Clear();
