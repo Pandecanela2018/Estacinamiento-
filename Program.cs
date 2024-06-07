@@ -89,7 +89,7 @@ class Estacionamiento
 
             if (rectanguloRojo < 1 || rectanguloRojo > cantidadRectangulos)
             {
-                Console.WriteLine("Número inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
+                Console.WriteLine("El número seleccionado es inválido. Por favor, selecciona un número entre 1 y " + cantidadRectangulos);
                 return;
             }
 
@@ -312,7 +312,7 @@ class Estacionamiento
         Console.WriteLine("                                     Su hora de ingreso fue: {0}", horaentrada.ToString("hh:mm"));
         Console.WriteLine("                                     Su hora de salida es: {0}", horaSalida.ToString("hh:mm"));
         Console.WriteLine("                  Su estadía en el parqueo fue de  {0} minutos  con  {1} segundos ", finalizado.Minutes, finalizado.Seconds);
-        Console.WriteLine("                          Gracias por utilizar nuestras instalaciones    ");
+        Console.WriteLine("                        Gracias por utilizar nuestras instalaciones, vuelva pronyo    ");
         Console.WriteLine("---------------------------------------------------------------------------------------------------------");
         Console.WriteLine(" ");
         Console.WriteLine(" ");
@@ -348,7 +348,7 @@ class Estacionamiento
             Console.WriteLine             ("La tarifa total es: $" + Tcompleta);
             Console.WriteLine("                                              ");
             Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine("Indique la cantidad adecuada $1, $5, $10, $20 , $50 y $100");
+            Console.WriteLine("Indique la cantidad a pagar adecuada $1, $5, $10, $20 , $50 y $100");
             Dinero= Convert.ToDouble(Console.ReadLine());
 
             if (Dinero < Tcompleta )
