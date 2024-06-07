@@ -1,4 +1,4 @@
-class EstacionamientoOscar
+class Estacionamiento
 {
     public static void Main(string[] args)
     {
