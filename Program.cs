@@ -1,4 +1,4 @@
-class Estacionamiento
+class Estacionamiento15
 {
     public static void Main(string[] args)
     {
